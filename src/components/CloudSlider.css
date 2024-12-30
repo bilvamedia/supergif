@@ -1,0 +1,188 @@
+.cloud-slider-container {
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 1rem;
+  padding: 1rem;
+  margin: 1rem 0;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.section-title {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--foreground);
+  margin-bottom: 0.5rem;
+  padding-left: 0.5rem;
+}
+
+.cloud-slider {
+  position: relative;
+  width: 100%;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background: transparent;
+}
+
+.slider {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.slide-track {
+  display: flex;
+  gap: 1rem;
+  width: calc(80px * 16);
+  animation: scroll 30s linear infinite;
+}
+
+.slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 45px;
+  height: 45px;
+  transition: all 0.3s ease;
+  background: white;
+  border-radius: 50%;
+  padding: 0.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+
+.slide:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  z-index: 1;
+}
+
+.slide.selected {
+  background: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transform: scale(1.1);
+}
+
+.cloud-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.cloud-icon svg {
+  width: 30px;
+  height: 30px;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-80px * 8));
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+.slider:hover .slide-track {
+  animation-play-state: paused;
+}
+
+.cloud-slider::before,
+.cloud-slider::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.cloud-slider::before {
+  left: 0;
+  background: linear-gradient(to right, 
+    rgba(255, 255, 255, 1) 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
+}
+
+.cloud-slider::after {
+  right: 0;
+  background: linear-gradient(to left, 
+    rgba(255, 255, 255, 1) 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
+}
+
+/* Modern scrollbar styling */
+.cloud-slider::-webkit-scrollbar {
+  height: 8px;
+}
+
+.cloud-slider::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+}
+
+.cloud-slider::-webkit-scrollbar-thumb {
+  background: rgba(59, 130, 246, 0.5);
+  border-radius: 4px;
+}
+
+.cloud-slider::-webkit-scrollbar-thumb:hover {
+  background: rgba(59, 130, 246, 0.7);
+}
+
+.card {
+  width: 100%; /* Set a specific width for the card */
+  overflow: hidden; /* Prevent overflow from the card */
+  position: relative; /* Positioning context for child elements */
+  overflow-x: hidden; /* Prevent horizontal overflow */
+}
+
+.chip-container {
+  display: flex; /* Use flexbox for layout */
+  flex-wrap: nowrap; /* Prevent chips from wrapping */
+  overflow: hidden; /* Prevent horizontal scroll */
+  padding: 0 20px; /* Add left and right padding for spacing */
+  gap: 10px; /* Space between chips */
+  animation: moveClouds 10s linear infinite; /* Add animation for cloud movement */
+  position: absolute; /* Position relative to the card */
+  left: 0; /* Align to the left of the card */
+  right: 0; /* Align to the right of the card */
+  /* width:200px; */
+}
+
+.chip {
+  width: 40px; /* Set a fixed width for the chips */
+  height: 40px; /* Set a fixed height for the chips */
+  background-color: #f0f0f0; /* Light background for chips */
+  border-radius: 50%; /* Make chips circular */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  cursor: pointer; /* Change cursor to hand pointer */
+  flex: 0 0 auto; /* Prevent chips from shrinking */
+  display: flex; /* Use flexbox for centering */
+  align-items: center; /* Center items vertically */
+  justify-content: center; /* Center items horizontally */
+}
+
+/* Animation for cloud movement */
+@keyframes moveClouds {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%); /* Move the chips to the left */
+  }
+}
