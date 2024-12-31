@@ -378,7 +378,7 @@ const drawSparkle = (ctx: CanvasRenderingContext2D, sparkle: Sparkle, frameIndex
 };
 
 const drawWatermark = (ctx: CanvasRenderingContext2D, canvas: HTMLCanvasElement) => {
-  const watermarkText = 'SuperGif';
+  const watermarkText = 'supergif.net';
   ctx.save();
   
   // Set watermark style

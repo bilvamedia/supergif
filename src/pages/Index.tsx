@@ -23,6 +23,7 @@ import { SuperGifLogo } from "@/components/SuperGifLogo";
 import { Link } from 'react-router-dom';
 import Layout from '@/components/Layout';
 import FeedbackDialog from '@/components/FeedbackDialog';
+import { Helmet } from 'react-helmet';
 
 const suggestions = DEFAULT_SUGGESTIONS;
 const CATEGORIES = {
@@ -214,6 +215,11 @@ function Index({ categories = [], backgrounds = [], characters = [] }: Props) {
 
   return (
     <Layout showBackButton={false}>
+      <Helmet>
+        <title>Super GIF</title>
+        <meta name="description" content="Create magical celebration GIFs with just a few clicks!" />
+        <meta name="keywords" content="GIF, celebration, magic, fun" />
+      </Helmet>
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-center gap-4 mb-8">
           <SuperGifLogo />
@@ -418,7 +424,7 @@ function Index({ categories = [], backgrounds = [], characters = [] }: Props) {
         <div className="flex flex-col items-center justify-center gap-2 mt-6 pb-4">
           <FeedbackDialog />
           <p className="text-sm text-gray-400">
-            Made with ❤️ in India, Hyderabad by Yogesh Kulkarni
+            Made with ❤️ in Hyderabad, India by Yogesh Kulkarni
           </p>
         </div>
         <Snackbar message={snackbarMessage} duration={3000} action={{ label: 'Undo', onClick: () => setSnackbarVisible(false) }} />
