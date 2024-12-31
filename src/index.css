@@ -99,3 +99,17 @@
     @apply bg-background text-foreground;
   }
 }
+
+.supergif-title{
+  background: linear-gradient(90deg, #ff6b6b, #f7b733); /* Gradient colors */
+  -webkit-background-clip: text; /* For Safari */
+  -webkit-text-fill-color: transparent; /* For Safari */
+  background-clip: text; /* For other browsers */
+  color: transparent; /* Fallback color */
+  font-size: 1.5rem; /* Adjust font size as needed */
+  font-weight: bold; /* Make the text bold */
+  text-align: center; /* Center the text */
+  margin: 0 auto; /* Center the element horizontally */
+  padding: 1rem; /* Add padding for spacing */
+
+}

@@ -214,12 +214,12 @@ function Index({ categories = [], backgrounds = [], characters = [] }: Props) {
 
   return (
     <Layout showBackButton={false}>
-      <div className="container mx-auto px-4 py-8">
+      <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-center gap-4 mb-8">
           <SuperGifLogo />
         </div>
         <div className="text-center mb-8">
-          <p className="text-lg text-gray-700">Create magical celebration GIFs with just a few clicks!</p>
+          <p className="supergif-title font-bold text-lg text-gray-700">Create magical celebration GIFs with just a few clicks!</p>
         </div>
         <div className="max-w-6xl mx-auto">
           <Card className="p-6 space-y-6 relative text-card-foreground">
@@ -327,7 +327,7 @@ function Index({ categories = [], backgrounds = [], characters = [] }: Props) {
                     </SelectContent>
                   </Select>
                 </div>
-                <div className="relative aspect-video bg-muted rounded-lg overflow-hidden">
+                <div className="relative aspect-video bg-muted rounded-lg">
                   {gifUrl ? (
                     <div className="relative inline-block w-full">
                       <img
@@ -379,7 +379,7 @@ function Index({ categories = [], backgrounds = [], characters = [] }: Props) {
                       </>
                     )}
                   </Button>
-                  {gifUrl && (
+                  {/* {gifUrl && (
                     <>
                       <div className="h-px bg-gray-200" />
                       <div className="flex flex-wrap justify-center items-center gap-4">
@@ -409,7 +409,7 @@ function Index({ categories = [], backgrounds = [], characters = [] }: Props) {
                         </div>
                       </div>
                     </>
-                  )}
+                  )} */}
                 </div>
               </div>
             </div>
